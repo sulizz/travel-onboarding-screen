@@ -16,7 +16,6 @@ import onBoardings from "../../constants/data";
 
 const OnBoarding = () => {
     //render content
-
     function renderContent() {
         return (
             <Animated.ScrollView
@@ -24,16 +23,23 @@ const OnBoarding = () => {
                 pagingEnabled
                 horizontal
                 scrollEnabled
+                showsHorizontalScrollIndicator={false}
             >
                 {onBoardings.map((item, index) => {
                     return (
-                        <View key={index} style={{ width: SIZES.width }}>
-                            <Text>{item.title}</Text>
-                            <Image
-                                source={item.img}
-                                resizeMode="cover"
-                                style={{ width: 100, height: 100 }}
-                            />
+                        <View key={index} style={styles.onBoardingContainer}>
+                            <View style={{ width: SIZES.width }}>
+                                <Image
+                                    source={item.img}
+                                    resizeMode="cover"
+                                    style={styles.imageContainer}
+                                />
+                            </View>
+
+                            {/* <View>
+                                <Text>{item.title}</Text>
+                                <Text>{item.description}</Text>
+                            </View> */}
                         </View>
                     );
                 })}
@@ -52,6 +58,16 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: COLORS.white,
+    },
+    onBoardingContainer: {
+        width: SIZES.width,
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center",
+    },
+    imageContainer: {
+        width: "100%",
+        height: "100%",
     },
 });
 
