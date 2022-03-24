@@ -10,23 +10,16 @@ const Stack = createStackNavigator();
 
 export default function App() {
     return (
-        <SafeAreaView style={styles.container}>
-            <NavigationContainer>
-                <Stack.Navigator>
-                    <Stack.Screen
-                        name="OnBoarding"
-                        component={OnBoarding}
-                        options={{ headerShown: false }}
-                    />
-                </Stack.Navigator>
-            </NavigationContainer>
-        </SafeAreaView>
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    name="OnBoarding"
+                    component={OnBoarding}
+                    options={{ headerShown: false }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#fff",
-    },
-});
+const styles = StyleSheet.create({});
